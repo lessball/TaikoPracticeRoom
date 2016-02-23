@@ -1,0 +1,17 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="1" image="taiko.png">
+    <module name="0" clip="0.638671875,0.701171875,0.5947265625,0.6904296875" />
+  </modules>
+  <frames autoNameCount="1">
+    <frame name="0">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="225,212" size="1055,98" degrees="0" color="ffffff4d" />
+    </frame>
+  </frames>
+  <actions autoNameCount="1">
+    <action name="gogobk" loop="false" addMix="false">
+      <sequence frame="0" duration="100" />
+    </action>
+  </actions>
+</animation>

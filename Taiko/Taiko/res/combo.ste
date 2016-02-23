@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<animation ver="1.0">
+	<modules name="0" autoNameCount="11" image="taiko.png">
+		<module name="0" clip="0.4951171875,0.5380859375,0.384765625,0.4365234375"/>
+		<module name="1" clip="0.5380859375,0.5810546875,0.384765625,0.4365234375"/>
+		<module name="2" clip="0.5810546875,0.6240234375,0.384765625,0.4365234375"/>
+		<module name="3" clip="0.6240234375,0.6669921875,0.384765625,0.4365234375"/>
+		<module name="4" clip="0.6669921875,0.7099609375,0.384765625,0.4365234375"/>
+		<module name="5" clip="0.4951171875,0.5380859375,0.466796875,0.5185546875"/>
+		<module name="6" clip="0.5380859375,0.5810546875,0.466796875,0.5185546875"/>
+		<module name="8" clip="0.5810546875,0.6240234375,0.466796875,0.5185546875"/>
+		<module name="9" clip="0.6240234375,0.6669921875,0.466796875,0.5185546875"/>
+		<module name="10" clip="0.6669921875,0.7099609375,0.466796875,0.5185546875"/>
+	</modules>
+	<frames autoNameCount="11">
+		<frame name="0">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="0" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="1">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="1" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="2">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="2" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="3">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="3" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="4">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="4" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="5">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="5" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="6">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="6" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="7">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="8" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="8">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="9" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+		<frame name="9">
+			<collisions/>
+			<reference/>
+			<sprite modules="0" module="10" pos="-22,-53" size="44.0,53.0" degrees="0" color="ffffffff"/>
+		</frame>
+	</frames>
+	<actions autoNameCount="10">
+		<action name="0" loop="false">
+			<sequence frame="0" duration="100"/>
+		</action>
+		<action name="1" loop="false">
+			<sequence frame="1" duration="100"/>
+		</action>
+		<action name="2" loop="false">
+			<sequence frame="2" duration="100"/>
+		</action>
+		<action name="3" loop="false">
+			<sequence frame="3" duration="100"/>
+		</action>
+		<action name="4" loop="false">
+			<sequence frame="4" duration="100"/>
+		</action>
+		<action name="5" loop="false">
+			<sequence frame="5" duration="100"/>
+		</action>
+		<action name="6" loop="false">
+			<sequence frame="6" duration="100"/>
+		</action>
+		<action name="7" loop="false">
+			<sequence frame="7" duration="100"/>
+		</action>
+		<action name="8" loop="false">
+			<sequence frame="8" duration="100"/>
+		</action>
+		<action name="9" loop="false">
+			<sequence frame="9" duration="100"/>
+		</action>
+	</actions>
+</animation>

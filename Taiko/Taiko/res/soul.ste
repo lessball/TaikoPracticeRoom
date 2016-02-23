@@ -1,0 +1,52 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="6" image="taiko.png">
+    <module name="0" clip="0.013671875,0.189453125,0.806640625,0.84765625" />
+    <module name="1" clip="0.013671875,0.263671875,0.806640625,0.8359375" />
+    <module name="2" clip="0.013671875,0.123046875,0.806640625,0.8359375" />
+    <module name="3" clip="0.013671875,0.169921875,0.806640625,0.84765625" />
+    <module name="4" clip="0.013671875,0.216796875,0.806640625,0.8359375" />
+    <module name="5" clip="0.2353515625,0.3603515625,0.70703125,0.74609375" />
+  </modules>
+  <frames autoNameCount="3">
+    <frame name="0">
+      <collisions />
+      <reference>
+        <point pos="2,0" />
+        <point pos="466,-30" />
+        <point pos="802,-40" />
+      </reference>
+      <sprite modules="0" module="1" pos="0,-30" size="256,30" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="0" pos="624,-42" size="180,42" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="3" pos="464,-42" size="160,42" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="4" pos="256,-30" size="208,30" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="1">
+      <collisions />
+      <reference>
+        <point pos="2,0" />
+        <point pos="626,-30" />
+        <point pos="802,-40" />
+      </reference>
+      <sprite modules="0" module="1" pos="0,-30" size="256,30" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="1" pos="256,-30" size="256,30" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="2" pos="512,-30" size="112,30" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="0" pos="624,-42" size="180,42" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="2">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="5" pos="0,0" size="128,40" degrees="0" color="ffffffff" />
+    </frame>
+  </frames>
+  <actions autoNameCount="3">
+    <action name="30" loop="false" addMix="false">
+      <sequence frame="0" duration="100" />
+    </action>
+    <action name="40" loop="false" addMix="false">
+      <sequence frame="1" duration="100" />
+    </action>
+    <action name="burn" loop="false" addMix="false">
+      <sequence frame="2" duration="100" />
+    </action>
+  </actions>
+</animation>

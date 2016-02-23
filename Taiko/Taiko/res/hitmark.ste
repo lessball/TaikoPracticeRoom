@@ -1,0 +1,29 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="3" image="taiko.png">
+    <module name="0" clip="0.3505859375,0.4794921875,0.1552734375,0.2841796875" />
+    <module name="1" clip="0.8662109375,0.9951171875,0.00390625,0.1328125" />
+    <module name="2" clip="0.9140625,0.9765625,0.1474609375,0.1630859375" />
+  </modules>
+  <frames autoNameCount="2">
+    <frame name="0">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="247,167" size="132,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="1">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="2" pos="225,145" size="1055,16" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="2" pos="225,305" size="1055,16" degrees="0" color="ffffffff" />
+      <sprite modules="0" module="1" pos="247,167" size="132,132" degrees="0" color="ffffffff" />
+    </frame>
+  </frames>
+  <actions autoNameCount="2">
+    <action name="mark" loop="false" addMix="false">
+      <sequence frame="0" duration="100" />
+    </action>
+    <action name="gogo" loop="false" addMix="false">
+      <sequence frame="1" duration="100" />
+    </action>
+  </actions>
+</animation>

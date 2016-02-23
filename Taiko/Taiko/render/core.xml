@@ -1,0 +1,5 @@
+<rendercore>
+	<technique name="simple2d" vertexshader="simple2d_v.hlsl.sd" pixelshader="simple2d_p.hlsl.sd"/>
+	<technique name="simple2dcolor" vertexshader="simple2dcolor_v.hlsl.sd" pixelshader="simplecolor_p.hlsl.sd"/>
+	<technique name="image2d" vertexshader="image2d_v.hlsl.sd" pixelshader="simple2d_p.hlsl.sd"/>
+</rendercore>

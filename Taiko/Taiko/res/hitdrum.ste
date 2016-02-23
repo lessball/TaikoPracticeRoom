@@ -1,0 +1,50 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="2" image="taiko.png">
+    <module name="0" clip="0.376953125,0.439453125,0.2978515625,0.3828125" />
+    <module name="1" clip="0.3857421875,0.4755859375,0.400390625,0.5341796875" />
+  </modules>
+  <frames autoNameCount="5">
+    <frame name="0">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="45,178" size="64,87" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="1">
+      <collisions />
+      <reference />
+    </frame>
+    <frame name="2">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="175,178" size="-64,87" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="3">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="1" pos="16,162" size="92,137" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="4">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="1" pos="204,162" size="-92,137" degrees="0" color="ffffffff" />
+    </frame>
+  </frames>
+  <actions autoNameCount="4">
+    <action name="left_red" loop="false" addMix="false">
+      <sequence frame="0" duration="50" />
+      <sequence frame="1" duration="33" />
+    </action>
+    <action name="right_red" loop="false" addMix="false">
+      <sequence frame="2" duration="50" />
+      <sequence frame="1" duration="33" />
+    </action>
+    <action name="left_blue" loop="false" addMix="false">
+      <sequence frame="3" duration="50" />
+      <sequence frame="1" duration="33" />
+    </action>
+    <action name="right_blue" loop="false" addMix="false">
+      <sequence frame="4" duration="50" />
+      <sequence frame="1" duration="33" />
+    </action>
+  </actions>
+</animation>

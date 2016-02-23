@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{46a51411-9b6d-4302-a1ba-6afc4ec5bb8b}</ProjectGuid>
+    <RootNamespace>PhoneDirect3DXamlAppComponent</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <WinMDAssembly>true</WinMDAssembly>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup>
+    <!-- If OutDir was set outside of the project file, then we will append ProjectName -->
+    <OutDir Condition="'$(OutDirWasSpecified)' == 'true'">$(OutDir)\$(MSBuildProjectName)\</OutDir>
+    <!-- else, OutDir needs to have project specific directory in order to handle files with unique names -->
+    <OutDir Condition="'$(OutDirWasSpecified)' != 'true' and '$(Platform)' == 'Win32'">$(SolutionDir)$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <OutDir Condition="'$(OutDirWasSpecified)' != 'true' and '$(Platform)' != 'Win32'">$(SolutionDir)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+    <!-- After OutDir has been fixed, disable Microsoft.common.targets from fixing it again -->
+    <OutDirWasSpecified>false</OutDirWasSpecified>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <AdditionalIncludeDirectories>../../../../;../../../FilePluginWP8;../../../../GameEngine;../../../../libs/libogg-1.3.0/include;../../../../libs/libvorbis-1.3.2/include;../../../../libs/zlib-1.2.5/contrib;../../../../libs/zlib-1.2.5;../../../../libs/boost_1_55_0;../../../../libs/rapidxml-1.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>GameSoundXAudio2.lib;Direct3D11RenderCore.lib;GameEngine.lib;d3d11.lib;Xaudio2.lib;Mfplat.lib;libpng15.lib;jpeg.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <AdditionalLibraryDirectories>..\..\..\libs_x86\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <AdditionalIncludeDirectories>../../../../;../../../FilePluginWP8;../../../../GameEngine;../../../../libs/libogg-1.3.0/include;../../../../libs/libvorbis-1.3.2/include;../../../../libs/zlib-1.2.5/contrib;../../../../libs/zlib-1.2.5;../../../../libs/boost_1_55_0;../../../../libs/rapidxml-1.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>GameSoundXAudio2.lib;Direct3D11RenderCore.lib;GameEngine.lib;d3d11.lib;Xaudio2.lib;Mfplat.lib;libpng15.lib;jpeg.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>..\..\..\libs_x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;_CRT_SECURE_NO_WARNINGS;UNDER_CE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <AdditionalIncludeDirectories>FilePluginWP8;GameEngine;../../../../libs/libogg-1.3.0/include;../../../../libs/libvorbis-1.3.2/include;../../../../libs/zlib-1.2.5/contrib;../../../../libs/zlib-1.2.5;../../../../libs/boost_1_56_0;../../../../libs/rapidxml-1.13;../../../../libs/lpng1514;../../../../libs/jpeg-9;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>d3d11.lib;Xaudio2.lib;Mfplat.lib;libpng15.lib;jpeg.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <AdditionalLibraryDirectories>..\..\..\libs_arm\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;NDEBUG;_CRT_SECURE_NO_WARNINGS;UNDER_CE;NOWIN32LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <AdditionalIncludeDirectories>FilePluginWP8;GameEngine;../../../../libs/libogg-1.3.0/include;../../../../libs/libvorbis-1.3.2/include;../../../../libs/zlib-1.2.5/contrib;../../../../libs/zlib-1.2.5;../../../../libs/boost_1_56_0;../../../../libs/rapidxml-1.13;../../../../libs/lpng1514;../../../../libs/jpeg-9;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>d3d11.lib;Xaudio2.lib;Mfplat.lib;libpng15.lib;jpeg.lib;libogg_static.lib;libvorbis_static.lib;libvorbisfile_static.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <AdditionalLibraryDirectories>..\..\..\libs_arm\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="platform.winmd">
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="DirectXHelper.h" />
+    <ClInclude Include="GameBGM.h" />
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11Mesh.h" />
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderAtom.h" />
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderCore.h" />
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderState.h" />
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11Texture.h" />
+    <ClInclude Include="GameEngine\FilePluginWP8\FilePluginCXArray.h" />
+    <ClInclude Include="GameEngine\FilePluginWP8\FilePluginWP8.h" />
+    <ClInclude Include="GameEngine\FileResource\CommonPlugin.h" />
+    <ClInclude Include="GameEngine\FileResource\FileResource.h" />
+    <ClInclude Include="GameEngine\FileResource\FileResourceManager.h" />
+    <ClInclude Include="GameEngine\FileResource\MemoryFileReader.h" />
+    <ClInclude Include="GameEngine\FileResource\XmlFileReader.h" />
+    <ClInclude Include="GameEngine\Game2DAnimation\Animation2D.h" />
+    <ClInclude Include="GameEngine\Game2DAnimation\Animation2DManager.h" />
+    <ClInclude Include="GameEngine\Game2DImage\Game2DImageNode.h" />
+    <ClInclude Include="GameEngine\Game2DImage\Game2DImageRender.h" />
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundManagerXAudio2.h" />
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundResourceXAudio2.h" />
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundXAudio2.h" />
+    <ClInclude Include="GameEngine\GameSound\GameSoundLoader.h" />
+    <ClInclude Include="GameEngine\GameSound\GameSoundManager.h" />
+    <ClInclude Include="GameEngine\LogPrint.h" />
+    <ClInclude Include="GameEngine\Matrix2DMath.h" />
+    <ClInclude Include="GameEngine\RenderCore\RenderAtom.h" />
+    <ClInclude Include="GameEngine\RenderCore\RenderCore.h" />
+    <ClInclude Include="GameEngine\RenderCore\RenderMesh.h" />
+    <ClInclude Include="GameEngine\RenderCore\RenderState.h" />
+    <ClInclude Include="GameEngine\RenderCore\RenderTexture.h" />
+    <ClInclude Include="GameEngine\RenderResource\DDSTexture.h" />
+    <ClInclude Include="GameEngine\RenderResource\ImageIO.h" />
+    <ClInclude Include="GameEngine\RenderResource\TextureManager.h" />
+    <ClInclude Include="GameEngine\ResourceManagerT.h" />
+    <ClInclude Include="OggStreamPlayer.h" />
+    <ClInclude Include="TaikoApp.h" />
+    <ClInclude Include="TaikoComponent.h" />
+    <ClInclude Include="Direct3DContentProvider.h" />
+    <ClInclude Include="TaikoGame.h" />
+    <ClInclude Include="TaikoSkin.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameBGM.cpp" />
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11Mesh.cpp" />
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderAtom.cpp" />
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderCore.cpp" />
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderState.cpp" />
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11Texture.cpp" />
+    <ClCompile Include="GameEngine\FilePluginWP8\FilePluginWP8.cpp" />
+    <ClCompile Include="GameEngine\FileResource\CommonPlugin.cpp" />
+    <ClCompile Include="GameEngine\FileResource\FileResource.cpp" />
+    <ClCompile Include="GameEngine\FileResource\FileResourceManager.cpp" />
+    <ClCompile Include="GameEngine\FileResource\MemoryFileReader.cpp" />
+    <ClCompile Include="GameEngine\FileResource\XmlFileReader.cpp" />
+    <ClCompile Include="GameEngine\Game2DAnimation\Animation2D.cpp" />
+    <ClCompile Include="GameEngine\Game2DAnimation\Animation2DManager.cpp" />
+    <ClCompile Include="GameEngine\Game2DImage\Game2DImageNode.cpp" />
+    <ClCompile Include="GameEngine\Game2DImage\Game2DImageRender.cpp" />
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundManagerXAudio2.cpp" />
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundResourceXAudio2.cpp" />
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundXAudio2.cpp" />
+    <ClCompile Include="GameEngine\GameSound\GameSoundLoader.cpp" />
+    <ClCompile Include="GameEngine\RenderResource\DDSTexture.cpp" />
+    <ClCompile Include="GameEngine\RenderResource\ImageIOCommon.cpp" />
+    <ClCompile Include="GameEngine\RenderResource\TextureManager.cpp" />
+    <ClCompile Include="OggStreamPlayer.cpp" />
+    <ClCompile Include="TaikoComponent.cpp" />
+    <ClCompile Include="Direct3DContentProvider.cpp" />
+    <ClCompile Include="TaikoGame.cpp" />
+    <ClCompile Include="TaikoSkin.cpp" />
+    <ClCompile Include="TaikuApp.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsPhone\v$(TargetPlatformVersion)\Microsoft.Cpp.WindowsPhone.$(TargetPlatformVersion).targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

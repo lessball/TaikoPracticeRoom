@@ -1,0 +1,116 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="12" image="taiko.png">
+    <module name="0" clip="0.00390625,0.1328125,0.00390625,0.1328125" />
+    <module name="1" clip="0.13671875,0.265625,0.00390625,0.1328125" />
+    <module name="2" clip="0.26953125,0.35546875,0.025390625,0.111328125" />
+    <module name="3" clip="0.359375,0.4453125,0.025390625,0.111328125" />
+    <module name="4" clip="0.44921875,0.53515625,0.025390625,0.111328125" />
+    <module name="5" clip="0.5400390625,0.5712890625,0.025390625,0.111328125" />
+    <module name="6" clip="0.576171875,0.619140625,0.025390625,0.111328125" />
+    <module name="7" clip="0.623046875,0.751953125,0.00390625,0.1328125" />
+    <module name="8" clip="0.7568359375,0.7880859375,0.00390625,0.1328125" />
+    <module name="9" clip="0.79296875,0.857421875,0.00390625,0.1328125" />
+    <module name="10" clip="0.01953125,0.2138671875,0.72265625,0.796875" />
+    <module name="11" clip="0.68359375,0.8779296875,0.1474609375,0.2763671875" />
+  </modules>
+  <frames autoNameCount="12">
+    <frame name="0">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="2" pos="-44,-44" size="88,88" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="1">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="3" pos="-44,-44" size="88,88" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="2">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="-66,-66" size="132,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="3">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="1" pos="-66,-66" size="132,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="4">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="4" pos="-44,-44" size="88,88" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="5">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="5" pos="0,-44" size="32,88" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="6">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="6" pos="0,-44" size="44,88" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="7">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="7" pos="-66,-66" size="132,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="8">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="8" pos="0,-66" size="32,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="9">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="9" pos="0,-66" size="66,132" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="10">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="10" pos="-38,-38" size="199,76" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="11">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="11" pos="-66,-66" size="199,132" degrees="0" color="ffffffff" />
+    </frame>
+  </frames>
+  <actions autoNameCount="12">
+    <action name="red" loop="false" addMix="false">
+      <sequence frame="0" duration="100" />
+    </action>
+    <action name="blue" loop="false" addMix="false">
+      <sequence frame="1" duration="100" />
+    </action>
+    <action name="red_big" loop="false" addMix="false">
+      <sequence frame="2" duration="100" />
+    </action>
+    <action name="blue_big" loop="false" addMix="false">
+      <sequence frame="3" duration="100" />
+    </action>
+    <action name="yellow" loop="false" addMix="false">
+      <sequence frame="4" duration="100" />
+    </action>
+    <action name="yellow_body" loop="false" addMix="false">
+      <sequence frame="5" duration="100" />
+    </action>
+    <action name="yellow_tail" loop="false" addMix="false">
+      <sequence frame="6" duration="100" />
+    </action>
+    <action name="yellow_big" loop="false" addMix="false">
+      <sequence frame="7" duration="100" />
+    </action>
+    <action name="yellow_big_body" loop="false" addMix="false">
+      <sequence frame="8" duration="100" />
+    </action>
+    <action name="yellow_big_tail" loop="false" addMix="false">
+      <sequence frame="9" duration="100" />
+    </action>
+    <action name="balloon" loop="false" addMix="false">
+      <sequence frame="10" duration="100" />
+    </action>
+    <action name="potato" loop="false" addMix="false">
+      <sequence frame="11" duration="100" />
+    </action>
+  </actions>
+</animation>

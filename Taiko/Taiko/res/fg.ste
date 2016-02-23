@@ -1,0 +1,19 @@
+<animation ver="1.0">
+  <modules name="0" autoNameCount="1" image="taiko.png">
+    <module name="0" clip="0.0029296875,0.22265625,0.138671875,0.369140625" />
+  </modules>
+  <frames autoNameCount="1">
+    <frame name="0">
+      <collisions />
+      <reference>
+        <point pos="110,245" />
+      </reference>
+      <sprite modules="0" module="0" pos="0,150" size="225,236" degrees="0" color="ffffffff" />
+    </frame>
+  </frames>
+  <actions autoNameCount="1">
+    <action name="fg" loop="false" addMix="false">
+      <sequence frame="0" duration="100" />
+    </action>
+  </actions>
+</animation>

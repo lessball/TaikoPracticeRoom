@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="TaikoComponent.cpp" />
+    <ClCompile Include="Direct3DContentProvider.cpp" />
+    <ClCompile Include="TaikoGame.cpp">
+      <Filter>TaikoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="TaikoSkin.cpp">
+      <Filter>TaikoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="TaikuApp.cpp">
+      <Filter>TaikoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBGM.cpp">
+      <Filter>TaikoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="OggStreamPlayer.cpp">
+      <Filter>TaikoGame</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11Mesh.cpp">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderAtom.cpp">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderCore.cpp">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11RenderState.cpp">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Direct3D11RenderCore\D3D11Texture.cpp">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FilePluginWP8\FilePluginWP8.cpp">
+      <Filter>GameEngine\FilePluginWP8</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FileResource\CommonPlugin.cpp">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FileResource\FileResource.cpp">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FileResource\FileResourceManager.cpp">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FileResource\MemoryFileReader.cpp">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\FileResource\XmlFileReader.cpp">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Game2DAnimation\Animation2D.cpp">
+      <Filter>GameEngine\Game2DAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Game2DAnimation\Animation2DManager.cpp">
+      <Filter>GameEngine\Game2DAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Game2DImage\Game2DImageNode.cpp">
+      <Filter>GameEngine\Game2DImage</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\Game2DImage\Game2DImageRender.cpp">
+      <Filter>GameEngine\Game2DImage</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\GameSound\GameSoundLoader.cpp">
+      <Filter>GameEngine\GameSound</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundManagerXAudio2.cpp">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundResourceXAudio2.cpp">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\GameSoundXAudio2\GameSoundXAudio2.cpp">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\RenderResource\DDSTexture.cpp">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\RenderResource\ImageIOCommon.cpp">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine\RenderResource\TextureManager.cpp">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicTimer.h" />
+    <ClInclude Include="TaikoComponent.h" />
+    <ClInclude Include="Direct3DContentProvider.h" />
+    <ClInclude Include="DirectXHelper.h" />
+    <ClInclude Include="OggStreamPlayer.h">
+      <Filter>TaikoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="TaikoApp.h">
+      <Filter>TaikoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="TaikoGame.h">
+      <Filter>TaikoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="TaikoSkin.h">
+      <Filter>TaikoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBGM.h">
+      <Filter>TaikoGame</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11Mesh.h">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderAtom.h">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderCore.h">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11RenderState.h">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Direct3D11RenderCore\D3D11Texture.h">
+      <Filter>GameEngine\Direct3D11RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FilePluginWP8\FilePluginWP8.h">
+      <Filter>GameEngine\FilePluginWP8</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FileResource\CommonPlugin.h">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FileResource\FileResource.h">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FileResource\FileResourceManager.h">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FileResource\MemoryFileReader.h">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FileResource\XmlFileReader.h">
+      <Filter>GameEngine\FileResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Game2DAnimation\Animation2D.h">
+      <Filter>GameEngine\Game2DAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Game2DAnimation\Animation2DManager.h">
+      <Filter>GameEngine\Game2DAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Game2DImage\Game2DImageNode.h">
+      <Filter>GameEngine\Game2DImage</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Game2DImage\Game2DImageRender.h">
+      <Filter>GameEngine\Game2DImage</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameSound\GameSoundLoader.h">
+      <Filter>GameEngine\GameSound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameSound\GameSoundManager.h">
+      <Filter>GameEngine\GameSound</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundManagerXAudio2.h">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundResourceXAudio2.h">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\GameSoundXAudio2\GameSoundXAudio2.h">
+      <Filter>GameEngine\GameSoundXAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderCore\RenderAtom.h">
+      <Filter>GameEngine\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderCore\RenderCore.h">
+      <Filter>GameEngine\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderCore\RenderMesh.h">
+      <Filter>GameEngine\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderCore\RenderState.h">
+      <Filter>GameEngine\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderCore\RenderTexture.h">
+      <Filter>GameEngine\RenderCore</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderResource\DDSTexture.h">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderResource\ImageIO.h">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\RenderResource\TextureManager.h">
+      <Filter>GameEngine\RenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\ResourceManagerT.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\LogPrint.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\Matrix2DMath.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine\FilePluginWP8\FilePluginCXArray.h">
+      <Filter>GameEngine\FilePluginWP8</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="TaikoGame">
+      <UniqueIdentifier>{8e96252a-b473-464b-ad40-764494c25007}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine">
+      <UniqueIdentifier>{e2e7793a-0fe3-4fef-85ce-0718e0ff1a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Direct3D11RenderCore">
+      <UniqueIdentifier>{eb88eb3b-1216-46e8-b384-23705e7f7802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\FilePluginWP8">
+      <UniqueIdentifier>{33076372-486c-450c-90fa-1f066c9e875f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\FileResource">
+      <UniqueIdentifier>{1d750b89-516d-4c3e-a254-9e8d6eed3a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Game2DAnimation">
+      <UniqueIdentifier>{64408f3c-7f55-4ac3-bb78-c34802771a08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Game2DImage">
+      <UniqueIdentifier>{d8d226c4-5e25-4905-91de-97ef434bdf39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\GameSound">
+      <UniqueIdentifier>{2522c1aa-c275-47da-bc64-31570d0bad8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\GameSoundXAudio2">
+      <UniqueIdentifier>{3a0ba519-6758-4314-bf72-ccff10331f3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\RenderCore">
+      <UniqueIdentifier>{4bb71d4c-9536-4da8-9ee3-f73250d4b609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\RenderResource">
+      <UniqueIdentifier>{355c67b5-6546-48db-ac6d-f7579108facf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
