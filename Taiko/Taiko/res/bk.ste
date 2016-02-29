@@ -4,7 +4,7 @@
     <module name="1" clip="0.0126953125,0.1708984375,0.9033203125,0.9990234375" />
     <module name="2" clip="0.0048828125,0.373046875,0.37890625,0.69140625" />
   </modules>
-  <frames autoNameCount="1">
+  <frames autoNameCount="3">
     <frame name="0">
       <collisions />
       <reference>
@@ -14,14 +14,28 @@
         <point pos="345,150" />
       </reference>
       <sprite modules="0" module="1" pos="-8,-8" size="1296,784" degrees="0" color="ffffffff" />
-      <sprite modules="0" module="0" pos="225,150" size="1055,236" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="1">
+      <collisions />
+      <reference />
       <sprite modules="0" module="2" pos="263,455" size="377,320" degrees="0" color="ffffffff" />
       <sprite modules="0" module="2" pos="1017,455" size="-377,320" degrees="0" color="ffffffff" />
+    </frame>
+    <frame name="2">
+      <collisions />
+      <reference />
+      <sprite modules="0" module="0" pos="225,150" size="1055,236" degrees="0" color="ffffffff" />
     </frame>
   </frames>
   <actions autoNameCount="1">
     <action name="bk" loop="false" addMix="false">
       <sequence frame="0" duration="100" />
+    </action>
+    <action name="drum" loop="false" addMix="false">
+      <sequence frame="1" duration="100" />
+    </action>
+    <action name="bk1" loop="false" addMix="false">
+      <sequence frame="2" duration="100" />
     </action>
   </actions>
 </animation>

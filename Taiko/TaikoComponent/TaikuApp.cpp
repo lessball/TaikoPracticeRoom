@@ -174,3 +174,8 @@ void TaikoApp::onPress(float x, float y)
 	int type = m_skin.getHitType(x, y, &left);
 	input(type, left);
 }
+
+void TaikoApp::setDrumScale(float scale)
+{
+	m_skin.setDrumScale(scale);
+}

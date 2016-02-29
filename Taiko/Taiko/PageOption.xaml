@@ -13,23 +13,90 @@
     Foreground="White"
     SupportedOrientations="Landscape" Orientation="Landscape"
     mc:Ignorable="d">
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="SliderStyle1" TargetType="Slider">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Maximum" Value="10"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Value" Value="0"/>
+            <Setter Property="Background" Value="{StaticResource PhoneChromeBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneAccentBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="0.1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HorizontalTrack"/>
+                                            <DoubleAnimation Duration="0" To="0.1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="VerticalTrack"/>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="HorizontalFill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="VerticalFill">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name="HorizontalTemplate" Margin="{StaticResource PhoneHorizontalMargin}">
+                                <Rectangle x:Name="HorizontalTrack" Fill="{TemplateBinding Background}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50"/>
+                                <Rectangle x:Name="HorizontalFill" Fill="{TemplateBinding Foreground}" Height="12" IsHitTestVisible="False" Margin="0,22,0,50">
+                                    <Rectangle.Clip>
+                                        <RectangleGeometry Rect="0, 0, 6, 12"/>
+                                    </Rectangle.Clip>
+                                </Rectangle>
+                                <Rectangle x:Name="HorizontalCenterElement" HorizontalAlignment="Left" Height="24" Margin="0,16,0,44" Width="12" Fill="#FFE51400">
+                                    <Rectangle.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                            <Grid x:Name="VerticalTemplate" Margin="{StaticResource PhoneVerticalMargin}">
+                                <Rectangle x:Name="VerticalTrack" Fill="{TemplateBinding Background}" IsHitTestVisible="False" Margin="18,0,18,0" Width="12"/>
+                                <Rectangle x:Name="VerticalFill" Fill="{TemplateBinding Foreground}" IsHitTestVisible="False" Margin="18,0,18,0" Width="12">
+                                    <Rectangle.Clip>
+                                        <RectangleGeometry Rect="0, 0, 12, 6"/>
+                                    </Rectangle.Clip>
+                                </Rectangle>
+                                <Rectangle x:Name="VerticalCenterElement" Fill="{StaticResource PhoneForegroundBrush}" Height="12" Margin="12,0,12,0" VerticalAlignment="Top" Width="24">
+                                    <Rectangle.RenderTransform>
+                                        <TranslateTransform/>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <StackPanel x:Name="LayoutRoot">
-        <StackPanel.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFAAA317" Offset="0"/>
-                <GradientStop Color="#FF918B0F" Offset="1"/>
-            </LinearGradientBrush>
-        </StackPanel.Background>
-        <CheckBox x:Name="CBHide" Content="隐藏内置谱面" HorizontalAlignment="Left" FontSize="24" Click="CheckBox_Click" FontFamily="Microsoft YaHei" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•仅供太鼓爱好者交流练习及作者自娱自乐使用" FontSize="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•游戏画面中白色圆形部分为鼓面，其余部分为鼓边" FontSize="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•红色音符敲鼓面，蓝色音符敲鼓边，黄条快速连打" FontSize="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•气球连打鼓面到指定次数" FontSize="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•画面瞎眼X_X作者尽力了。游戏不能暂停，偷了个懒" FontSize="32"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•意见反馈/联系作者请邮件到lessball@hotmail.com" FontSize="32"/>
-        <Button Content="评价" FontSize="36" Click="Button_Click" Foreground="White" FontFamily="Microsoft YaHei" Background="#FFD63737" BorderBrush="{x:Null}" Template="{StaticResource ButtonBaseControlTemplate1}"/>
-    </StackPanel>
+    <DrawingSurfaceBackgroundGrid x:Name="DrawingSurfaceBackground" Loaded="DrawingSurfaceBackground_Loaded">
+        <StackPanel x:Name="LayoutRoot">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAA317" Offset="0"/>
+                    <GradientStop Color="#FF918B0F" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <CheckBox x:Name="CBHide" Content="隐藏内置谱面" HorizontalAlignment="Left" FontSize="24" Click="CheckBox_Click" FontFamily="Microsoft YaHei" Foreground="White"/>
+            <Button Content="修改鼓面大小" FontSize="30" Click="Button_Click_Drum_Scale" Foreground="White" FontFamily="Microsoft YaHei" Background="#FFD63737" BorderBrush="{x:Null}" Template="{StaticResource ButtonBaseControlTemplate1}"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•仅供太鼓爱好者交流练习及作者自娱自乐使用" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•游戏画面中白色圆形部分为鼓面，其余部分为鼓边" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•红色音符敲鼓面，蓝色音符敲鼓边，黄条快速连打" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•气球连打鼓面到指定次数" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•画面瞎眼X_X作者尽力了。游戏不能暂停，偷了个懒" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" Text="•意见反馈/联系作者请邮件到lessball@hotmail.com" FontSize="30"/>
+            <Button Content="评价" FontSize="30" Click="Button_Click" Foreground="White" FontFamily="Microsoft YaHei" Background="#FFD63737" BorderBrush="{x:Null}" Template="{StaticResource ButtonBaseControlTemplate1}"/>
+        </StackPanel>
+        <Slider x:Name="DrumScaleSlider" Value="{Binding DrumScale, Mode=TwoWay}" Minimum="1" Maximum="1.5" Margin="40,0" VerticalAlignment="Bottom" Background="Black" Style="{StaticResource SliderStyle1}" Foreground="#FFFF7400" Visibility="Collapsed" />
+    </DrawingSurfaceBackgroundGrid>
 
 </phone:PhoneApplicationPage>

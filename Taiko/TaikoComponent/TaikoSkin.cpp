@@ -5,7 +5,8 @@
 
 TaikoSkin::TaikoSkin()
 {
-	m_bk = NULL;
+	for (int i = 0; i < (int)(sizeof(m_bk) / sizeof(m_bk[0])); i++)
+		m_bk[i] = NULL;
 	m_fg = NULL;
 	m_hitJudge = NULL;
 	for(int i=0; i<(int)(sizeof(m_number)/sizeof(m_number[0])); i++)
@@ -22,26 +23,32 @@ TaikoSkin::~TaikoSkin()
 }
 void TaikoSkin::init()
 {
-	m_bk = Animation2DManager::getSingleton()->get("res/bk.ste", false);
-	if(m_bk == NULL)
+	m_bk[0] = Animation2DManager::getSingleton()->get("res/bk.ste", false);
+	if(m_bk[0] == NULL)
 		return;
-	m_bk->changeAction("bk");
-	m_bk->play();
-	if(m_bk->getReferencePointCount() < 4)
+	m_bk[0]->changeAction("bk");
+	m_bk[0]->play();
+	if(m_bk[0]->getReferencePointCount() < 4)
 		return;
+	m_bk[1] = Animation2DManager::getSingleton()->get("res/bk.ste", false);
+	m_bk[1]->changeAction("drum");
+	m_bk[1]->play();
+	m_bk[2] = Animation2DManager::getSingleton()->get("res/bk.ste", false);
+	m_bk[2]->changeAction("bk1");
+	m_bk[2]->play();
 	float localMat[6] = {1.0f,0.0f,0.0f, 0.0f,1.0f,0.0f};
-	m_bk->getReferencePoint(0, localMat[2], localMat[5]);
+	m_bk[0]->getReferencePoint(0, localMat[2], localMat[5]);
 	m_noteRoot.setLocalMatrix(localMat);
 	m_lineRoot.setLocalMatrix(localMat);
 	m_balloonRoot.setLocalMatrix(localMat);
 	float hitRange[4];
-	m_bk->getReferencePoint(1, hitRange[0], hitRange[1]);
-	m_bk->getReferencePoint(2, hitRange[2], hitRange[3]);
+	m_bk[0]->getReferencePoint(1, hitRange[0], hitRange[1]);
+	m_bk[0]->getReferencePoint(2, hitRange[2], hitRange[3]);
 	m_hitCenter[0] = hitRange[2];
 	m_hitCenter[1] = hitRange[1];
 	m_hitScale[0] = 1.0f / (hitRange[2]-hitRange[0]);
 	m_hitScale[1] = 1.0f / (hitRange[1]-hitRange[3]);
-	m_bk->getReferencePoint(3, localMat[2], localMat[5]);
+	m_bk[0]->getReferencePoint(3, localMat[2], localMat[5]);
 	m_soulBar[0].setLocalMatrix(localMat);
 	m_fg = Animation2DManager::getSingleton()->get("res/fg.ste", false);
 	if(m_fg == NULL)
@@ -100,7 +107,8 @@ void TaikoSkin::init()
 	m_gogoBK->changeAction("gogobk");
 	m_gogoBK->play();
 	m_note.push_back(Animation2DManager::getSingleton()->get("res/note.ste", false));
-	m_imageRoot.addChild(m_bk->getNode());
+	for (int i = 0; i < (int)(sizeof(m_bk)/sizeof(m_bk[0])); i++)
+		m_imageRoot.addChild(m_bk[i]->getNode());
 	m_imageRoot.addChild(m_branch->getNode());
 	m_imageRoot.addChild(m_gogoBK->getNode());
 	m_imageRoot.addChild(m_hitFlash->getNode());
@@ -115,6 +123,7 @@ void TaikoSkin::init()
 	m_imageRoot.addChild(m_hitJudge->getNode());
 	m_imageRoot.addChild(&m_comboRoot);
 	m_imageRoot.addChild(&m_balloonRoot);
+	begin(3, -1);
 }
 void TaikoSkin::release()
 {
@@ -122,10 +131,13 @@ void TaikoSkin::release()
 	m_noteRoot.clearChild();
 	m_comboRoot.clearChild();
 	m_balloonRoot.clearChild();
-	if(m_bk != NULL)
+	for (int i = 0; i < (int)(sizeof(m_bk) / sizeof(m_bk[0])); i++)
 	{
-		Animation2DManager::getSingleton()->release(m_bk, false);
-		m_bk = NULL;
+		if (m_bk[i] != NULL)
+		{
+			Animation2DManager::getSingleton()->release(m_bk[i], false);
+			m_bk[i] = NULL;
+		}
 	}
 	if(m_fg != NULL)
 	{
@@ -534,4 +546,19 @@ int TaikoSkin::getHitType(float x, float y, bool *pleft)
 	float dx = (x-m_hitCenter[0]) * m_hitScale[0];
 	float dy = (y-m_hitCenter[1]) * m_hitScale[1];
 	return dx*dx+dy*dy < 1.0f ? TaikoGame::RED_BIG : TaikoGame::BLUE_BIG;
+}
+
+void TaikoSkin::setDrumScale(float scale)
+{
+	if (m_bk[0] != NULL && m_bk[0]->getReferencePointCount() >= 4 && m_bk[1] != NULL)
+	{
+		float mat[6];
+		matrix2DScalePosition(mat, scale, scale, m_hitCenter[0] * (1 - scale), m_hitCenter[1] * (1 - scale));
+		m_bk[1]->getNode()->setLocalMatrix(mat);
+		float hitRange[4];
+		m_bk[0]->getReferencePoint(1, hitRange[0], hitRange[1]);
+		m_bk[0]->getReferencePoint(2, hitRange[2], hitRange[3]);
+		m_hitScale[0] = 1.0f / (hitRange[2] - hitRange[0]) / scale;
+		m_hitScale[1] = 1.0f / (hitRange[1] - hitRange[3]) / scale;
+	}
 }

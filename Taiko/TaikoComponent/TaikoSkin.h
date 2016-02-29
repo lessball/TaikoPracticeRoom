@@ -12,7 +12,7 @@ private:
 	int m_hit;
 	float m_width;
 
-	Animation2D *m_bk;
+	Animation2D *m_bk[3];
 	Animation2D *m_fg;
 	Animation2D *m_hitJudge;
 	Animation2D *m_hitJudgeBk;
@@ -61,6 +61,8 @@ public:
 	}
 
 	int getHitType(float x, float y, bool *pleft);
+
+	void setDrumScale(float scale);
 };
 
 #endif

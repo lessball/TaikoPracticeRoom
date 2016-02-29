@@ -74,6 +74,11 @@ namespace PhoneDirect3DXamlAppInterop
                 {
                 }
             }
+            if (!settings.Contains("drumscale"))
+            {
+                settings.Add("drumscale", 1.0f);
+                MessageBox.Show("可以在选项中设置鼓面大小");
+            }
         }
 
     }

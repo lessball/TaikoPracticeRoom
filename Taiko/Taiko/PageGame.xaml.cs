@@ -315,6 +315,11 @@ namespace PhoneDirect3DXamlAppInterop
             {
                 return false;
             }
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+            if (settings.Contains("drumscale"))
+            {
+                m_d3dBackground.setDrumScale((float)settings["drumscale"]);
+            }
             //m_tja = "";
             UIRoot.Visibility = System.Windows.Visibility.Collapsed;
             return true;

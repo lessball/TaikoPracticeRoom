@@ -23,7 +23,8 @@ namespace PhoneDirect3DXamlAppComponent
 
 Direct3DBackground::Direct3DBackground() :
 	m_timer(ref new BasicTimer())
-	, m_device(NULL), m_context(NULL), m_renderTargetView(NULL), m_inGame(false), m_gameCallback(nullptr), m_tjaindex(0), m_tjaloaded(false)
+	, m_device(NULL), m_context(NULL), m_renderTargetView(NULL), m_inGame(false), m_gameCallback(nullptr), m_tjaindex(0), m_tjaloaded(false), m_autoPlay(false)
+	, m_filePlugin(NULL), m_drumScale(1.0f)
 {
 	m_taikoAppCallback.m_bg = this;
 	m_app.setCallback(&m_taikoAppCallback);
@@ -126,6 +127,17 @@ void Direct3DBackground::setMemoryFileData(Platform::String ^path, const Platfor
 		FileResourceManager::getSingleton()->addPlugin(m_filePlugin);
 	}
 	m_filePlugin->addFile(path, data);
+}
+
+void Direct3DBackground::beginRender()
+{
+	m_inGame = true;
+}
+
+void Direct3DBackground::setDrumScale(float scale)
+{
+	m_drumScale = scale;
+	m_app.setDrumScale(scale);
 }
 
 // Event Handlers
@@ -271,6 +283,7 @@ HRESULT Direct3DBackground::Draw(_In_ ID3D11Device1* device, _In_ ID3D11DeviceCo
 			GameSoundManager::getSingleton()->releaseSoundManager();
 			return S_FALSE;
 		}
+		m_app.setDrumScale(m_drumScale);
 	}else if(context != m_context || renderTargetView != m_renderTargetView)
 	{
 		m_context = context;

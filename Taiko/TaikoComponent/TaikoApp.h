@@ -44,6 +44,8 @@ public:
 		m_game.input(type, left, &m_skin);
 	}
 	void onPress(float x, float y);
+
+	void setDrumScale(float scale);
 };
 
 #endif

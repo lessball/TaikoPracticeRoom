@@ -48,6 +48,9 @@ public:
 	void clearMemoryFileData();
 	void setMemoryFileData(Platform::String ^path, const Platform::Array<byte> ^data);
 
+	void beginRender();
+	void setDrumScale(float scale);
+
 protected:
 	// Event Handlers
 	void OnPointerPressed(Windows::Phone::Input::Interop::DrawingSurfaceManipulationHost^ sender, Windows::UI::Core::PointerEventArgs^ args);
@@ -104,6 +107,7 @@ private:
 	bool m_autoPlay;
 	std::wstring m_dbpath;
 	FilePluginCXArray *m_filePlugin;
+	float m_drumScale;
 };
 
 }
