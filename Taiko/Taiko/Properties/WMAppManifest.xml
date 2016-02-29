@@ -4,7 +4,7 @@
   <Languages xmlns="">
     <Language code="zh-Hans" />
   </Languages>
-  <App xmlns="" ProductID="{751cd637-a623-4735-a115-ded095b25d88}" Title="太鼓练习室" RuntimeType="Silverlight" Version="1.0.0.2" Genre="apps.normal" Author="SunLit" Description="" Publisher="SunLit" PublisherID="{fb86c79d-2ca5-47af-a402-139b388af3ce}">
+  <App xmlns="" ProductID="{751cd637-a623-4735-a115-ded095b25d88}" Title="太鼓练习室" RuntimeType="Silverlight" Version="1.0.0.3" Genre="apps.normal" Author="SunLit" Description="" Publisher="SunLit" PublisherID="{fb86c79d-2ca5-47af-a402-139b388af3ce}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
